@@ -5,7 +5,7 @@ public class CameraDrift : MonoBehaviour
     public float driftSpeed = 0.3f;
     public float driftAmount = 0.15f;
 
-    Vector3 startPos;
+    Vector3 _startPos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +20,7 @@ public class CameraDrift : MonoBehaviour
         float x = Mathf.Sin(Time.time * driftSpeed) * driftAmount;
         float y = Mathf.Cos(Time.time * driftSpeed) * driftAmount;
 
-        transform.position = startPos + new Vector3(x, y, 0);
+        transform.position = _startPos + new Vector3(x, y, 0);
 
     }
 }

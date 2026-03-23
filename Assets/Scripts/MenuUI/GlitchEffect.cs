@@ -4,11 +4,11 @@ using TMPro;
 public class GlitchEffect : MonoBehaviour
 {
     public TMP_Text text;
-    string originalText;
+    string _originalText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        originalText = text.text;
+        _originalText = text.text;
         InvokeRepeating("Glitch", 2f, 3f); 
     }
 
@@ -20,6 +20,6 @@ public class GlitchEffect : MonoBehaviour
 
     void ResetText()
     {
-        text.text = originalText;
+        text.text = _originalText;
     }
 }

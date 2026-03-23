@@ -14,6 +14,7 @@ namespace Core
             else
             {
                 Manager = this;
+                DontDestroyOnLoad(gameObject);
             }
         }
     }

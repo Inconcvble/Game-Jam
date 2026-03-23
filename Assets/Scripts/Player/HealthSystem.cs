@@ -7,8 +7,10 @@ namespace Player
     {
         public int maxHealth = 100;
         private int _currentHealth;
+        private bool _isDead;
 
         public event Action OnHealthChanged;
+        public event Action OnDeath;
 
         public int CurrentHealth => _currentHealth;
 
@@ -22,6 +24,11 @@ namespace Player
             _currentHealth -= amount;
             _currentHealth = Mathf.Max(_currentHealth, 0);
             OnHealthChanged?.Invoke();
+            if (_currentHealth <= 0 && !_isDead)
+            {
+                _isDead = true;
+                OnDeath?.Invoke();
+            }
         }
 
         public void Heal(int amount)

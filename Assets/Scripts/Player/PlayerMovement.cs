@@ -20,7 +20,7 @@ namespace Player {
         }
 
         void FixedUpdate() {
-            rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed * Time.deltaTime, moveDirection.y * moveSpeed * Time.deltaTime);
+            rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
         }
 
         private void OnEnable() {

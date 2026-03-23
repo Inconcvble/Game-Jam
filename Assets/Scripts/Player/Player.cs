@@ -8,6 +8,7 @@ namespace Player
     public class Player : MonoBehaviour, IDamageable
     {
         [SerializeField] public HealthSystem health;
+        [FormerlySerializedAs("StrengthModifier")] [SerializeField] public float strengthModifier = 1f;
 
         private void Awake()
         {
@@ -17,12 +18,18 @@ namespace Player
             }
 
             health.OnHealthChanged += OnHealthChanged;
+            health.OnDeath += OnPlayerDeath;
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
         private void OnHealthChanged()
         {
             Debug.Log("Player Health: " + health.CurrentHealth);
+        }
+        
+        private void OnPlayerDeath()
+        {
+            Debug.Log("Player is dead");
         }
 
         public void TakeDamage(int damageAmount)

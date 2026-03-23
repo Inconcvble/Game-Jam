@@ -10,7 +10,7 @@ namespace Player
 
         private void Update()
         {
-            if (healButton.IsPressed() && player is not null)
+            if (healButton.WasPressedThisFrame() && player is not null)
             {
                 player.Heal(20);
             }
