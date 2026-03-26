@@ -1,7 +1,7 @@
 ﻿using Interfaces;
 using UnityEngine;
 
-namespace Enemy
+namespace Bases
 {
     public class GemThrowable : MonoBehaviour
     {

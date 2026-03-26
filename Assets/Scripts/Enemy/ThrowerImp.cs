@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using Bases;
+using Interfaces;
 using UnityEngine;
 
 namespace Enemy

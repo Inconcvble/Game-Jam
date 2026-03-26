@@ -1,8 +1,8 @@
 ﻿using Core;
-using UnityEngine;
 using Interfaces;
+using UnityEngine;
 
-namespace Enemy
+namespace Bases
 {
     public class EnemyBase : MonoBehaviour, IDamageable
     {

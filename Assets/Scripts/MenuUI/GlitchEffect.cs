@@ -1,25 +1,28 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class GlitchEffect : MonoBehaviour
+namespace MenuUI
 {
-    public TMP_Text text;
-    string _originalText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class GlitchEffect : MonoBehaviour
     {
-        _originalText = text.text;
-        InvokeRepeating("Glitch", 2f, 3f); 
-    }
+        public TMP_Text text;
+        string _originalText;
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            _originalText = text.text;
+            InvokeRepeating("Glitch", 2f, 3f); 
+        }
 
-    void Glitch()
-    {
-        text.text = "M!ND'S B0X";
-        Invoke("ResetText", 0.2f);
-    }
+        void Glitch()
+        {
+            text.text = "M!ND'S B0X";
+            Invoke("ResetText", 0.2f);
+        }
 
-    void ResetText()
-    {
-        text.text = _originalText;
+        void ResetText()
+        {
+            text.text = _originalText;
+        }
     }
 }

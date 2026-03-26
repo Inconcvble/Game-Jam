@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class VolumeControl : MonoBehaviour
+namespace MenuUI
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class VolumeControl : MonoBehaviour
     {
-         float savedVolume = PlayerPrefs.GetFloat("Volume", 1.0f);
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            float savedVolume = PlayerPrefs.GetFloat("Volume", 1.0f);
             AudioListener.volume = savedVolume;
-    }
+        }
 
-    public void SetVolume(float volume)
-    {
-        AudioListener.volume = volume;
-        PlayerPrefs.SetFloat("Volume", volume);
+        public void SetVolume(float volume)
+        {
+            AudioListener.volume = volume;
+            PlayerPrefs.SetFloat("Volume", volume);
+        }
     }
 }

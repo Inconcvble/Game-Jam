@@ -1,24 +1,27 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+namespace MenuUI
 {
-    private Vector3 _originalScale;
+    public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    {
+        private Vector3 _originalScale;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        _originalScale = transform.localScale;
-    }
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            _originalScale = transform.localScale;
+        }
 
-     public void OnPointerEnter(PointerEventData eventData)
-    {
-        transform.localScale = _originalScale * 1.1f; 
-    }
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            transform.localScale = _originalScale * 1.1f; 
+        }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        transform.localScale = _originalScale;
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            transform.localScale = _originalScale;
+        }
     }
 }
 
